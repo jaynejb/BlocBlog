@@ -1,4 +1,7 @@
 BlocBlog::Application.routes.draw do
+  resources :authors
+
+
   get "home/index"
 
   resources :posts
