@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526172748) do
+ActiveRecord::Schema.define(:version => 20130529171647) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,28 @@ ActiveRecord::Schema.define(:version => 20130526172748) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "comments", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.date     "create_date"
+    t.date     "delete_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "images", :force => true do |t|
+    t.string   "url"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "images", ["post_id"], :name => "index_images_on_post_id"
+
   create_table "posts", :force => true do |t|
     t.string   "name"
     t.string   "title"
@@ -27,6 +49,19 @@ ActiveRecord::Schema.define(:version => 20130526172748) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "author_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.text     "bio"
+    t.string   "website"
+    t.string   "twitter"
+    t.boolean  "author"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  post: 
+  user: 
+  comment: MyText
+  create_date: 2013-05-30
+  delete_date: 2013-05-30
+
+two:
+  post: 
+  user: 
+  comment: MyText
+  create_date: 2013-05-30
+  delete_date: 2013-05-30
