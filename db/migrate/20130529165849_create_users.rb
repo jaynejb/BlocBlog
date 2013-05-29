@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :user_id
       t.string :name
       t.string :email
-      t.string :password
       t.text :bio
       t.string :website
       t.string :twitter
