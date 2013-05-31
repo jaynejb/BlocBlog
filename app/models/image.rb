@@ -1,4 +1,4 @@
 class Image < ActiveRecord::Base
   belongs_to :post
-  attr_accessible :url
+  attr_accessible :image_id, :url
 end
