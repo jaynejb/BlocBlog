@@ -1,0 +1,36 @@
+<h1>Create a user profile</h1>
+<br>
+<%= form_for @user do |f| %>
+<br>
+<p>
+	<%= f.label :name, "Username" %><br>
+	<%= f.text_field :name %>
+</p>	
+
+<p>
+	<%= f.label :bio, "Short Bio" %><br>
+	<%= f.text_field :bio %>
+</p>
+
+<p>
+	<%= f.label :email, "Email Address" %><br>
+	<%= f.text_field :email %>
+</p>	
+
+<p>
+	<%= f.label :twitter, "Twitter" %><br>
+	<%= f.text_field :twitter %>
+</p>	
+
+<p>
+	<%= f.label :website, "Website" %><br>
+	<%= f.text_field :website %>
+</p>
+
+<p>
+	<%= f.submit "Submit" %>
+</p>	
+
+<%=link_to 'Return to all users', users_path %>
+
+<% end %>
