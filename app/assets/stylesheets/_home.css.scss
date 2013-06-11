@@ -1,0 +1,53 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background-color: $bg-color;
+}
+
+#banner {
+      width: 1300px;
+      height: 300px;
+      padding: 5px;
+
+      h1 {
+      @include title-font;
+      }
+    }
+
+#banner_image {
+      position: relative;
+      bottom: 60px;
+      z-index: -1;
+    }
+
+a {
+      color: $text-color;
+      text-decoration:none;
+      &:hover {
+      color: #ffffff;
+      }
+   }   
+
+#navigation_h3 {
+      @include title-font;
+      text-transform: uppercase;
+      }
+
+#button_nav {
+      border-radius: 5px;
+      border: 2px dotted #292c863;
+      background-color: #bbfa82;
+      height: 40px;
+      width: 100px;
+      margin: 5px;
+      text-align: center;
+      padding-bottom: 25px;
+      position: relative;
+      bottom: 60px;
+
+      h3 {
+      @include text-font;
+      }
+    }
