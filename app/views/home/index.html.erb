@@ -1,124 +1,74 @@
-<h1>Jayne's Bloc Blog</h1>
+<html>
+<body style='padding: 60px;'>
 
-  <html>
-     <style>
-     #banner {
-      width: 1300px;
-      height: 300px;
-      padding: 5px;
-    }
+  <div class='navbar navbar-inverse navbar-fixed-top'>
+    <div class='navbar-inner'>
+    <div class = 'container'>
+      <a class='brand' href='#'>Jayne Jang Belz</a>
+        <ul class='nav'>
+          <li style='font-size: 120%'><%= link_to "Home", root_url %></li> 
+          <li style='font-size: 120%'><%= link_to "Blog", posts_path %></li>
+          <li style='font-size: 120%'><a href="#">About</a></li>
+          <li style='font-size: 120%'><%= link_to "Users", users_path %></li>
+          <li style='font-size: 120%'><%= link_to "Log In", users_path %></li>
+          <li style='font-size: 120%'><%= link_to "Register", new_user_path %></li>
+        </ul>
+    </div>
+    </div>
+  </div>
 
-    #banner_image {
-      position: relative;
-      bottom: 60px;
-      z-index: -1;
-    }
+  <header>
+    <div class='hero-unit'>
+      <h1>Jayne's Site</h1>
+        <p>Welcome to my site. Learn more about me and see this sample blog here.</p>
+          <p>
+            <a class='btn btn-primary btn-large'>Read Posts</a>
+          </p>  
+    </div>
+  </header>
 
-    a:link {
-      color: #122d75;
-      text-decoration:none;
-    }
-
-    a:hover {
-      color: #ffffff;
-      text-decoration:none;
-    }
-
-    #navigation_bar {
-      width: 1300px;
-      height: 50px;
-      padding: 5px;
-      background-color: #a5b4dc;
-      position: relative;
-      bottom: 60px;
-    }
-
-    #navigation_bar h3 {
-      font: 16px Verdana, sans-serif;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    #button_nav {
-      border-radius: 5px;
-      border: 2px solid #2155d9;
-      background-color: #aec2f3;
-      height: 40px;
-      width: 100px;
-      margin: 5px;
-      text-align: center;
-    }
-
-    #owner_dashboard {
-      width: 1300px;
-      height: 350px;
-      padding: 5px;
-      background-color: #ced3e1;
-      margin: 0 auto;
-    }
-
-    #owner_dashboard h2 {
-      font: Verdana, sans-serif;
-      text-transform: uppercase;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    #owner_dashboard h3 {
-      font: Verdana, sans-serif;
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    #button_owner {
-      border-radius: 5px;
-      border: 2px solid #2155d9;
-      background-color: #acb3c6;
-      height: 240px;
-      width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    #right_sidebar {
-      width:200px;
-      min-height:500px; 
-      height:auto !important; 
-      height:500px;
-      background-color:#a5b4dc;
-      float:right;
-    }
-    
-    </style>
-    
-    <body>
-    <header>
-        <div id = 'banner'>
-            <h1>Musings</h1>
-          <div id = 'banner_image'>
-            <img src = 'http://placehold.it/1300x200' />
-            </div>
-        </div>
-    </header>
-
-    <section id = 'navigation_bar'><!--Nav Bar-->
-        <div id = 'button_nav' style = 'float: left;'>
-          <h3><%= link_to "Blog", posts_path %></h3>
-        </div>
-        <div id = 'button_nav' style = 'float: left;'>
-          <h3><%= link_to "Users", users_path %></h3>
-        </div>
-      <div id = 'button_nav' style='float: right;'>
-          <h3><%= link_to "Log In", users_path %></h3>
-      </div>
-      <div id = 'button_nav' style='float: right;'>
-          <h3><%= link_to "Register", new_user_path %></h3>
-      </div>
-    </section>
+<br/>
+<br/>
+<div class='row'>
+  <div class='span3 offset4'><img src='http://placehold.it/400x400' class='img-circle' alt=''><h2>Sample Text</h2></div>
+  <div class='span3 offset6'><img src='http://placehold.it/400x400' class='img-circle' alt=''><h2>Sample Text</h2></div>
+</div>
+<br/>
+<br/>
+  <p class='text-center'>
+  <ul class='thumbnails'>
+  <li class='span4'>
+    <div class='thumbnail'>
+      <img src="http://placehold.it/300x200" alt=''>
+      <h3>Writing</h3>
+      <p>See writing samples here...</p>
+    </div>
+  </li>
+  <li class='span4'>
+    <div class='thumbnail'>
+      <img src="http://placehold.it/300x200" alt=''>
+      <h3>Editing</h3>
+      <p>See editing information here...</p>
+     </div>
+   </li>
+   <li class='span4'>
+    <div class='thumbnail'>
+      <img src="http://placehold.it/300x200" alt=''>
+      <h3>Writing</h3>
+      <p>See writing samples here...</p>
+    </div>
+  </li>
+  <li class='span4'>
+    <div class='thumbnail'>
+      <img src="http://placehold.it/300x200" alt=''>
+      <h3>Writing</h3>
+      <p>See writing samples here...</p>
+    </div>
+  </li>
+  </ul>
+  </p>
 
   
-  </body>
-  </html>
+</body>
+</html>
   
