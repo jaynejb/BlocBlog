@@ -5,7 +5,7 @@
   <div class='navbar navbar-inverse navbar-fixed-top'>
     <div class='navbar-inner'>
     <div class='container'>
-      <%= link_to "Jayne Jang Blex", root_path, class: 'brand' %>
+      <%= link_to "Jayne Jang Belz", root_path, class: 'brand' %>
         <ul class='nav'>
           <li style='font-size: 120%'><%= link_to "Home", root_url %></li>  
           <li style='font-size: 120%'><%= link_to "Blog", posts_path %></li>
@@ -23,14 +23,17 @@
 <section id='post'>
 <h2><%= @post.title %></h2>
   <p><%= @post.body %></p>
-
-  <p style='font-size: 80%; border-top: 1px solid #959595;'><em>Created at:</em></p>
+  <br/>
+  <p style='font-size: 80%; border-top: 1px solid #959595;'><em>Posted <%= time_ago_in_words(@post.created_at) %> ago</em></p>
 </p> 
 
 </section>
 
-<div id = 'comments'>
-<h2>Comments</h2>
+  <div class='row'>
+  <div class='span12 offset1'>
+  <div class='well'>
+<div id='comments'>
+<h2><i class='icon-comment'></i> Comments</h2>
   <% @post.comments.each do |c| %>
   <div id = 'individual_comment'>
     <p><%= c.body %></p>
@@ -44,14 +47,17 @@
     <p><%= f.submit "Submit" %>
   <% end %>  
 </div>
+</div>
+</div>
+</div>
 
 <h4>Admin:</h4>
   <p>
     <div class='btn-toolbar'>
     <div class='btn-group'>
-      <button class='btn'><%= link_to 'Edit', edit_post_path(@post) %></button>
-      <button class='btn'><%= link_to 'Back', posts_path %></button>
-      <button class='btn'><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+      <button class='btn'><i class="icon-edit"></i> <%= link_to 'Edit', edit_post_path(@post) %></button>
+      <button class='btn'><i class="icon-arrow-left"></i> <%= link_to 'Back', posts_path %></button>
+      <button class='btn'><i class="icon-trash"></i> <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
     </div>
     </div>  
   </p>

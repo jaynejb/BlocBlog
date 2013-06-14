@@ -4,7 +4,7 @@
   <div class='navbar navbar-inverse navbar-fixed-top'>
     <div class='navbar-inner'>
     <div class = 'container'>
-      <a class='brand' href='#'>Jayne Jang Belz</a>
+      <%= link_to "Jayne Jang Belz", root_path, class: 'brand' %>
         <ul class='nav'>
           <li style='font-size: 120%'><%= link_to "Home", root_url %></li> 	
           <li style='font-size: 120%'><%= link_to "Blog", posts_path %></li>
@@ -18,21 +18,24 @@
   </div>
 
   <h1><%= link_to "Blog", posts_path %></h1>
+  <br/>
 
-  <div class='btn-group pull-right'>
-  	<button class='btn btn-large'><%= link_to 'Create New Post', new_post_path %></button>
+  <div class='btn-group'>
+  	<button class='btn btn-large'><i class="icon-pencil"></i> <%= link_to 'Create New Post', new_post_path %></button>
   </div>
+  <br/>
+  <br/>
 
 <% @posts.each do |post| %>
   <section id='post'>  	
   <h2><%= link_to post.title, post %></h2>
   <p><%= post.body %></p>
+  <p style='border-top: 1px solid #959595;'><i class="icon-calendar"></i> <em>Posted <%= time_ago_in_words(post.created_at) %> ago</em></p>
   <p>
   	<div class='btn-toolbar'>
   	<div class='btn-group'>
-  		<button class='btn'><%= link_to 'Edit', edit_post_path(post) %></button>
-  		<button class='btn'><%= link_to 'Back', posts_path %></button>
-  		<button class='btn'><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  		<button class='btn'><i class="icon-edit"></i> <%= link_to 'Edit', edit_post_path(post) %></button>
+  		<button class='btn'><i class="icon-trash"></i> <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
   	</div>
   	</div>	
   </p>
@@ -49,9 +52,9 @@
     			<p>
   					<div class='btn-toolbar'>
   					<div class='btn-group'>
-  						<button class='btn btn-small'><%= link_to 'Edit', edit_post_path(post) %></button>
-  						<button class='btn btn-small'><%= link_to 'Back', posts_path %></button>
-  						<button class='btn btn-small'><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  						<button class='btn btn-small'><i class="icon-edit"></i> <%= link_to 'Edit', edit_post_path(post) %></button>
+  						<button class='btn btn-small'><i class="icon-arrow-left"></i>  <%= link_to 'Back', posts_path %></button>
+  						<button class='btn btn-small'><i class="icon-trash"></i> <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
   					</div>
   					</div>
   				</p>
