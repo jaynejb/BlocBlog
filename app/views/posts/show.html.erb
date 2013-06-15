@@ -7,43 +7,66 @@
     <div class='container'>
       <%= link_to "Jayne Jang Belz", root_path, class: 'brand' %>
         <ul class='nav'>
-          <li style='font-size: 120%'><%= link_to "Home", root_url %></li>  
-          <li style='font-size: 120%'><%= link_to "Blog", posts_path %></li>
-          <li style='font-size: 120%'><a href="#">About</a></li>
-          <li style='font-size: 120%'><%= link_to "Users", users_path %></li>
-          <li style='font-size: 120%'><%= link_to "Log In", users_path %></li>
-          <li style='font-size: 120%'><%= link_to "Register", new_user_path %></li>
+          <li><%= link_to "Home", root_url %></li>  
+          <li><%= link_to "Blog", posts_path %></li>
+          <li><a href="#">About</a></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Log In", users_path %></li>
+          <li><%= link_to "Register", new_user_path %></li>
         </ul>
     </div>
     </div>
   </div>
 
-<h1><%= link_to "Blog", posts_path %></h1>
+<div class='row-fluid'>
+<div class='span11 offset1'>
+    <p><img src='http://placehold.it/1750x300'/></p>
 
-<section id='post'>
-<h2><%= @post.title %></h2>
-  <p><%= @post.body %></p>
-  <br/>
-  <p style='font-size: 80%; border-top: 1px solid #959595;'><em>Posted <%= time_ago_in_words(@post.created_at) %> ago</em></p>
-</p> 
+    <h3><i class='icon-arrow-left'></i> <em><%= link_to "Return to all posts", posts_path %></em></h3>
+
+    <div class='span8'>
+    <div class='well'>  
+      <section id='post'>
+        <h2 class='post-title'><%= @post.title %></h2>
+          <p class='post-date'><em>Posted by</em> User <em><%= time_ago_in_words(@post.created_at) %> ago</em> in Category</p>
+          <p class='post-text'><%= @post.body %></p>
+    </div>
+    </div>  
+
+    <div class='span3'>
+    <div class='well'> 
+      <div class='btn-group'>
+        <button class='btn btn-large'><i class="icon-pencil"></i> <%= link_to 'Create New Post', new_post_path %></button>
+      </div>
+
+      <h3>Recent Posts</h3>
+        <p>Hello</p>
+      <h3>Recent Comments</h3>
+        <p>Hello</p>    
+    </div>
+    </div>
+
+</div>
+</div>
 
 </section>
 
   <div class='row'>
-  <div class='span12 offset1'>
+  <div class='span8 offset3'>
   <div class='well'>
-<div id='comments'>
-<h2><i class='icon-comment'></i> Comments</h2>
-  <% @post.comments.each do |c| %>
-  <div id = 'individual_comment'>
-    <p><%= c.body %></p>
-    <p style = 'font-size: 80%;'><em>Submitted <%= time_ago_in_words(c.created_at) %> ago</em></p>
-  </div>  
-  <% end %>
+  <div id='comments'>
+    <h2><i class='icon-comment'></i> Comments</h2>
+      <% @post.comments.each do |c| %>
+    
+      <div id = 'individual_comment'>
+        <p><%= c.body %></p>
+        <p style = 'font-size: 80%;'><em>Submitted <%= time_ago_in_words(c.created_at) %> ago</em></p>
+      </div>  
+      <% end %>
   
-  <%= form_for [@post, @post.comments.build] do |f| %>
-    <h4><em><%= f.label :body, "Insert new comment" %></em></h4>
-    <p><%= f.text_area :body %>
+    <%= form_for [@post, @post.comments.build] do |f| %>
+    <h4><em><strong><%= f.label :body, "Insert new comment" %></strong></em></h4>
+    <p><%= f.text_area :body, :size => "550x6" %>
     <p><%= f.submit "Submit" %>
   <% end %>  
 </div>

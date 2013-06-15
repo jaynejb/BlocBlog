@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    background-color: $bg-color;
+    background-color: #9a9a9a;
 }
 
 h1 {
@@ -11,32 +11,41 @@ h1 {
 }
 
 #post {
-     width: 950px;
-     border-radius: 5px;
-     border: 2px solid #2155d9;
+     width: 700px;
      margin: 10px;
      padding: 10px;
-    
-    h2 {
-     @include title-font;
-     border-bottom: 2px dotted #959595; 
-    } 
+     background-color: #ffffff;
 
     p {
      @include text-font;
     }
 
     a:link {
-      color: $text-color;
+      color: #e64369;
       text-decoration:none;
     }
 
     a:hover {
-      color: #1d59fb;
+      color: #e64369;
       text-decoration:none;
     }
 }
 
+h2.post-title {
+     @include title-font;
+     font-family: 'Arial', serif; 
+    }
+
+p.post-date {
+      font-size: 80%;
+      border-bottom: 1px solid #d6d6d6;
+    }
+
+p.post-text {
+    border-bottom: 2px dotted #959595;
+    padding-bottom: 40px;
+}    
+  
 #comments {
 	margin: 20px;
 
@@ -47,7 +56,7 @@ h1 {
 }
 
 #individual_comment {
-	width: 850px;
+	width: 550px;
 	background-color: #c3f0f0;
 	padding-left: 10px;
 }

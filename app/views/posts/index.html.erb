@@ -1,4 +1,9 @@
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+  </head>
+
 <body style='padding: 60px;'>
 
   <div class='navbar navbar-inverse navbar-fixed-top'>
@@ -6,65 +11,66 @@
     <div class = 'container'>
       <%= link_to "Jayne Jang Belz", root_path, class: 'brand' %>
         <ul class='nav'>
-          <li style='font-size: 120%'><%= link_to "Home", root_url %></li> 	
-          <li style='font-size: 120%'><%= link_to "Blog", posts_path %></li>
-          <li style='font-size: 120%'><a href="#">About</a></li>
-          <li style='font-size: 120%'><%= link_to "Users", users_path %></li>
-          <li style='font-size: 120%'><%= link_to "Log In", users_path %></li>
-          <li style='font-size: 120%'><%= link_to "Register", new_user_path %></li>
+          <li><%= link_to "Home", root_url %></li> 	
+          <li><%= link_to "Blog", posts_path %></li>
+          <li><a href="#">About</a></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Log In", users_path %></li>
+          <li><%= link_to "Register", new_user_path %></li>
         </ul>
     </div>
     </div>
   </div>
 
-  <h1><%= link_to "Blog", posts_path %></h1>
-  <br/>
+  <div class='row-fluid'>
+  <div class='span11 offset1'>
 
-  <div class='btn-group'>
-  	<button class='btn btn-large'><i class="icon-pencil"></i> <%= link_to 'Create New Post', new_post_path %></button>
+    <p><img src='http://placehold.it/1750x300'/></p>
+
+      <div class='span8'>
+      <div class='well'>  
+        
+        <% @posts.each do |post| %>
+        <section id='post'>   
+          <div class='btn-toolbar pull-right'>
+          <div class='btn-group'>
+            <button class='btn'><i class="icon-edit"></i> <%= link_to 'Edit', edit_post_path(post) %></button>
+            <button class='btn'><i class="icon-trash"></i> <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+          </div>
+          </div>  
+
+        <h2 class='post-title'><%= link_to post.title, post %></h2>
+        <p class='post-date'><em>Posted by</em> User <em><%= time_ago_in_words(post.created_at) %> ago</em> in Category</p>
+        <p class='post-text'><%= post.body %></p>
+        </section>
+        <% end %>
+      </div>
+      </div>
+
+      <div class='span3'>
+      <div class='well'> 
+        <img src='http://placehold.it/400x400' class='img-rounded' alt=''>
+
+        <h3>Recent Posts</h3>
+          <% @posts.each do |post| %>
+          <p><%= link_to post.title, post %></p>
+          <% end %>
+
+        <h3>Recent Comments</h3>
+          <p>Hello</p>  
+
+        <div class='btn-group'>
+          <button class='btn btn-large'><i class="icon-pencil"></i> <%= link_to 'Create New Post', new_post_path %></button>
+          <br/>
+        </div>
+    
+      </div>
+      </div>
+
   </div>
-  <br/>
-  <br/>
-
-<% @posts.each do |post| %>
-  <section id='post'>  	
-  <h2><%= link_to post.title, post %></h2>
-  <p><%= post.body %></p>
-  <p style='border-top: 1px solid #959595;'><i class="icon-calendar"></i> <em>Posted <%= time_ago_in_words(post.created_at) %> ago</em></p>
-  <p>
-  	<div class='btn-toolbar'>
-  	<div class='btn-group'>
-  		<button class='btn'><i class="icon-edit"></i> <%= link_to 'Edit', edit_post_path(post) %></button>
-  		<button class='btn'><i class="icon-trash"></i> <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-  	</div>
-  	</div>	
-  </p>
-</section>
-<% end %>
-
-<% @posts.each do |post| %>
-  <div class="row-fluid">
-    <div class="span8">
-    <div class="hero-unit">
-    	<article>
-    	<h2><%= link_to post.title, post %></h2>
-      		<p><%= post.body %></p>
-    			<p>
-  					<div class='btn-toolbar'>
-  					<div class='btn-group'>
-  						<button class='btn btn-small'><i class="icon-edit"></i> <%= link_to 'Edit', edit_post_path(post) %></button>
-  						<button class='btn btn-small'><i class="icon-arrow-left"></i>  <%= link_to 'Back', posts_path %></button>
-  						<button class='btn btn-small'><i class="icon-trash"></i> <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-  					</div>
-  					</div>
-  				</p>
-  		
-  	</div>
-  	</div>
-  </div>
-<% end %>
+</div>
 
 
-
+  
 </body>
 </html>

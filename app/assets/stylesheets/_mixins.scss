@@ -1,2 +1,2 @@
-@mixin title-font { font-family: 'Verdana', sans-serif, 14px; style: italic; weight: bold; color: $text-color; }
-@mixin text-font { font-family: 'Verdana', sans-serif; color: $text-color; }
+@mixin title-font { font-family: 'Arial', sans-serif; size: 12px; style: italic; weight: bold; color: #e64369; }
+@mixin text-font { font-family: 'Arial', sans-serif; color: $text-color; }
