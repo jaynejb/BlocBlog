@@ -28,10 +28,10 @@
   <%= form_for @post do |f| %>
 
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, autocomplete: 'off', size: "30x10", placeholder: 'Title your post here...' %>
   <br>
   <%= f.label :body %>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, autocomplete: 'off', size: "30x10", placeholder: 'Start writing your post here...' %>
   <br> 
   <%= f.submit "Create Post" %>
   

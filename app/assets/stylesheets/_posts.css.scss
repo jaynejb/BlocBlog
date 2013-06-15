@@ -20,13 +20,18 @@ h1 {
      @include text-font;
     }
 
+    a {
+      color: #ef587b;
+      text-decoration:none;
+    }
+
     a:link {
       color: #e64369;
       text-decoration:none;
     }
 
     a:hover {
-      color: #e64369;
+      color: #7f7f7f;
       text-decoration:none;
     }
 }
