@@ -24,39 +24,8 @@
 
 
 <h1>Create a User Profile</h1>
-<br/
-<%= form_for @user do |f| %>
-<br>
-<p>
-	<%= f.label :name, "Username" %>
-	<%= f.text_field :name %>
-</p>	
-
-<p>
-	<%= f.label :bio, "Short Bio" %>
-	<%= f.text_field :bio %>
-</p>
-
-<p>
-	<%= f.label :email, "Email Address" %>
-	<%= f.text_field :email %>
-</p>	
-
-<p>
-	<%= f.label :twitter, "Twitter" %>
-	<%= f.text_field :twitter %>
-</p>	
-
-<p>
-	<%= f.label :website, "Website" %>
-	<%= f.text_field :website %>
-</p>
-
-<p>
-	<%= f.submit "Submit" %>
-</p>	
-
-<% end %>
+<br/>
+  <%= render 'form' %>
 
 <br/>
 

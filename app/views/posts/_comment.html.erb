@@ -1,0 +1,16 @@
+  <div id='comments'>
+    <h2><i class='icon-comment'></i> Comments</h2>
+      <% @post.comments.each do |c| %>
+    
+      <div id = 'individual_comment'>
+        <p><%= c.body %></p>
+        <p style = 'font-size: 80%;'><em>Submitted <%= time_ago_in_words(c.created_at) %> ago</em></p>
+      </div>  
+      <% end %>
+  
+    <%= form_for [@post, @post.comments.build] do |f| %>
+    <h4><em><strong><%= f.label :body, "Insert new comment" %></strong></em></h4>
+    <p><%= f.text_area :body, :size => "550x6" %>
+    <p><%= f.submit "Submit" %>
+  <% end %>  
+</div>
