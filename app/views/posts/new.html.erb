@@ -4,24 +4,6 @@
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
   </head>
   
-<body style='padding: 60px;'>
-
-  <div class='navbar navbar-inverse navbar-fixed-top'>
-    <div class='navbar-inner'>
-    <div class = 'container'>
-      <%= link_to "Jayne Jang Belz", root_path, class: 'brand' %>
-        <ul class='nav'>
-          <li style='font-size: 120%'><%= link_to "Home", root_url %></li> 
-          <li style='font-size: 120%'><%= link_to "Blog", posts_path %></li>
-          <li style='font-size: 120%'><a href="#">About</a></li>
-          <li style='font-size: 120%'><%= link_to "Users", users_path %></li>
-          <li style='font-size: 120%'><%= link_to "Log In", users_path %></li>
-          <li style='font-size: 120%'><%= link_to "Register", new_user_path %></li>
-        </ul>
-    </div>
-    </div>
-  </div>
-
 <h1>Create New Post</h1>
 
 <p>
@@ -38,5 +20,4 @@
   <% end %>
 </p>
 
-</body>
 </html>
