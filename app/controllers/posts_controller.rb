@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  
+  before_filter :set_current_user
+
   # GET /posts
   # GET /posts.json
   def index

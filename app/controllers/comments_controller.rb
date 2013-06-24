@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
+  before_filter :set_current_user
+
   def index
-    
+    @comments = @user.comments
+  end
 
   def create
   	@post = Post.find(params[:post_id])
