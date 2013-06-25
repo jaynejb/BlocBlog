@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :author, :bio, :email, :name, :twitter, :user_id, :website
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :lockable, :timeoutable and :activatable
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :author, :bio, :email, :name, :password, :password_confirmation, :twitter, :user_id, :website
 
   has_many :posts
   has_many :comments

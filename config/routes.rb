@@ -1,4 +1,6 @@
 BlocBlog::Application.routes.draw do
+  devise_for :users
+
   get "sessions/create"
 
   get "sessions/destroy"
