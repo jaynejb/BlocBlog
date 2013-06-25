@@ -6,6 +6,15 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.recoverable
       t.rememberable
       t.trackable
+      t.integer :user_id
+      t.string :name
+      t.string :email
+      t.text :bio
+      t.string :website
+      t.string :twitter
+      t.boolean :author
+      t.references :post
+      t.references :comment
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
 
       t.timestamps
@@ -14,6 +23,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :email,                :unique => true
     add_index :users, :confirmation_token,   :unique => true
     add_index :users, :reset_password_token, :unique => true
+    add_index :users, :post_id
+    add_index :users, :comment_id
     # add_index :users, :unlock_token,         :unique => true
   end
 
