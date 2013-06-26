@@ -3,13 +3,17 @@
     <%= f.label :name, "Username" %>
     <%= f.text_field :name %>
   </div>
+  <div class='password'>
+    <%= f.label :password, "Password" %>
+    <%= f.text_field :password %>
+  </div>
+   <div class='field'>
+    <%= f.label :email, "Email Address" %>
+    <%= f.text_field :email %>
+  </div>
   <div class='field'>
     <%= f.label :bio, "Short Bio" %>
     <%= f.text_field :bio %>
-  </div>
-  <div class='field'>
-    <%= f.label :email, "Email Address" %>
-    <%= f.text_field :email %>
   </div>
   <div class='field'>
     <%= f.label :twitter, "Twitter" %>
