@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :set_current_user
+  before_filter :authenticate_user!, only: [ :create, :destroy ]
 
   def index
     @comments = @user.comments

@@ -1,6 +1,6 @@
 class AddDeviseToUsers < ActiveRecord::Migration
   def self.up
-    change_table(:users) do |t|
+    create_table(:users) do |t|
       ## Database authenticatable
       t.integer :user_id
       t.string :name
