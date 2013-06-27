@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
   	@users = User.all
+    authorize! :update, @users
   end
 
   def new

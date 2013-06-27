@@ -1,30 +1,8 @@
 BlocBlog::Application.routes.draw do
+
   devise_for :users
 
-  get "sessions/create"
-
-  get "sessions/destroy"
-
-  get "comments/create"
-
-  get "comments/destroy"
-
-  get "users/index"
-
-  get "users/create"
-
-  get "users/edit"
-
-  get "users/show"
-
-  get "user/new"
-
-  get "user/_form"
-
   resources :users
-
-
-  get "home/index"
 
   resources :posts
 

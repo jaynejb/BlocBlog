@@ -32,12 +32,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
+      authorize! :update, @post
     end
   end
 
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    authorize! :update, @post
   end
 
   # POST /posts
@@ -53,6 +55,9 @@ class PostsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+
+    authorize! :create, @post
+      
     end
   end
 
@@ -69,6 +74,8 @@ class PostsController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+
+      authorize! :update, @post
     end
   end
 
@@ -82,5 +89,7 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :no_content }
     end
+
+    authorize! :destroy, @post
   end
 end

@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :lockable, :timeoutable and :activatable
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :author, :user_id
+  attr_accessible :name, :twitter, :website, :user_id
 
   has_many :posts
   has_many :comments

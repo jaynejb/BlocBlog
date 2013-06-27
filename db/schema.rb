@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20130626154748) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.string   "author"
+    t.string   "category"
     t.datetime "create_date"
     t.datetime "update_date"
     t.integer  "user_id"
@@ -49,7 +51,9 @@ ActiveRecord::Schema.define(:version => 20130626154748) do
     t.string   "name"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
-    t.boolean  "author"
+    t.boolean  "admin"
+    t.string   "twitter"
+    t.string   "website"
     t.integer  "post_id"
     t.integer  "comment_id"
     t.string   "reset_password_token"

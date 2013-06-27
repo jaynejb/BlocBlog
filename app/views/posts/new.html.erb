@@ -12,11 +12,20 @@
   <%= f.label :title %>
   <%= f.text_field :title, autocomplete: 'off', size: "30x10", placeholder: 'Title your post here...' %>
   <br>
+
   <%= f.label :body %>
   <%= f.text_area :body, autocomplete: 'off', size: "30x10", placeholder: 'Start writing your post here...' %>
   <br> 
+
+  <%= f.label :category %>
+  <%= f.text_field :category, size: "30x10", placeholder: 'Select from Food, Travel' %>
+  <br>
+
+  <%= f.label :author %>
+  <%= f.text_field :author, size: "30x10", placeholder: 'Written by...' %>
+  <br>
+
   <%= f.submit "Create Post" %>
-  
   <% end %>
 </p>
 

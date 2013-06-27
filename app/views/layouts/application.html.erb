@@ -19,19 +19,25 @@
           <li><%= link_to 'Home', root_url %></li> 
           <li><%= link_to 'Blog', posts_path %></li>
           <li><a href="#">About</a></li>
+
+          <% if can? :update, @post %>
           <li><%= link_to 'Users', users_path %></li>
-          <li><%= link_to 'Register', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path %></li>
-        </ul>
+          <% end %>
+
+          <% if current_user %>
+            <li><%= link_to current_user.name %></li>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path %></li>
+          <% else %>
+            <li><%= link_to 'Register', new_user_registration_path %></li>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <% end %>  
+        </ul>  
     </div>
     </div>
   </div>
-
-
+            
 <%= yield %>
 
 </body>
 </html>
-
-

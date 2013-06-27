@@ -13,19 +13,23 @@
       <div class='well'>  
         
         <% @posts.each do |post| %>
-        <section id='post'>   
+        <!-- Admin tools -->
+        <section id='post'> 
+          <% if can? :update, @post %>
           <div class='btn-toolbar pull-right'>
           <div class='btn-group'>
             <button class='btn'><i class="icon-edit"></i> <%= link_to 'Edit', edit_post_path(post) %></button>
             <button class='btn'><i class="icon-trash"></i> <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
           </div>
           </div>  
+          <% end %>
 
         <h2 class='post-title'><%= link_to post.title, post %></h2>
-        <p class='post-date'><em>Posted by</em> User <em><%= time_ago_in_words(post.created_at) %> ago</em> in Category</p>
+        <p class='post-date'><em>Posted by</em> <%= post.author %> <em><%= time_ago_in_words(post.created_at) %> ago</em> in <% post.category %></p>
         <p class='post-text'><%= post.body %></p>
         </section>
         <% end %>
+
       </div>
       </div>
 
@@ -39,18 +43,19 @@
           <% end %>
 
         <h3>Recent Comments</h3>
-          <p>Hello</p>  
+          <p>Hello</p>
 
+        <% if can? :update, @post %>    
         <div class='btn-group'>
           <button class='btn btn-large'><i class="icon-pencil"></i> <%= link_to 'Create New Post', new_post_path %></button>
           <br/>
         </div>
+        <% end %>
     
       </div>
       </div>
 
   </div>
 </div>
-
 
 </html>
