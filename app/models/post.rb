@@ -1,8 +1,9 @@
 class Post < ActiveRecord::Base
-  attr_accessible :post_id, :title, :body, :author, :create_date, :update_date
+  attr_accessible :post_id, :title, :body, :author, :category, :create_date, :update_date
 
   validates :body,  presence: true
   validates :title, presence: true, uniqueness: true
+  validates :category, presence: true
 
   default_scope order('created_at desc')
   

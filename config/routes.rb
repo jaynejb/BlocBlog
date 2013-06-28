@@ -2,6 +2,8 @@ BlocBlog::Application.routes.draw do
 
   devise_for :users
 
+  match 'about', :to => "home#about"
+
   resources :users
 
   resources :posts

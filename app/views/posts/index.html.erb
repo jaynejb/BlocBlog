@@ -25,7 +25,7 @@
           <% end %>
 
         <h2 class='post-title'><%= link_to post.title, post %></h2>
-        <p class='post-date'><em>Posted by</em> <%= post.author %> <em><%= time_ago_in_words(post.created_at) %> ago</em> in <% post.category %></p>
+        <p class='post-date'><em>Posted by</em> <%= post.author %> <em><%= time_ago_in_words(post.created_at) %> ago</em> in <%= post.category %> </p>
         <p class='post-text'><%= post.body %></p>
         </section>
         <% end %>

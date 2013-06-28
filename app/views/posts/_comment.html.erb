@@ -4,7 +4,7 @@
     
       <div id = 'individual_comment'>
         <p><%= c.body %></p>
-        <p style = 'font-size: 80%;'><em>Submitted <%= time_ago_in_words(c.created_at) %> ago</em></p>
+        <p style = 'font-size: 80%;'><em>Posted by <%= c.user.name %> <%= time_ago_in_words(c.created_at) %> ago</em></p>
       </div>  
       <% end %>
   

@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @post.user = current_user
 
     respond_to do |format|
       format.html # show.html.erb
@@ -45,20 +46,14 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render json: @post, status: :created, location: @post }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
-
     authorize! :create, @post
-      
-    end
+    @post = Post.new(params[:post])
+    @post.user = current_user
+      if @post.save
+        redirect_to @post, notice: 'Post was successfully created.'
+      else
+        render action: "new"
+      end
   end
 
   # PUT /posts/1

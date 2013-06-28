@@ -8,9 +8,12 @@ class CommentsController < ApplicationController
   def create
   	@post = Post.find(params[:post_id])
   	@comment = @post.comments.build(params[:comment])
-  	@comment.save
-
-	redirect_to @post
+    @comment.user = current_user
+      if @comment.save
+        redirect_to @post, notice: 'Comment was successfully posted.'
+      else
+        render action: "create"
+      end
   end
 
   def destroy
