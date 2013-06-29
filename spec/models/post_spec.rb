@@ -3,20 +3,18 @@ require 'spec_helper'
 describe Post do
 
 	before :each do
-    	@post = Post.new :title, :body, :author, :category
+    	@post = Post.new(title: 'Post title', body: 'Post body', author: 'Jayne', category: 'Food')
 	end
 
-	describe "#new" do
-    	it 'takes four parameters and returns a new Post object' do
+
+    	it "takes four parameters and returns a new Post object" do
         	@post.should be_an_instance_of Post
     	end
-	end	
 
-	describe "#title" do
-    	it 'returns the correct title' do
-        	@post.title.should eql "Title"
+
+    	it "returns the correct title" do
+        	@post.title.should eql "Post title"
     	end
-	end
 end
 
 
