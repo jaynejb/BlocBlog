@@ -6,8 +6,6 @@ BlocBlog::Application.routes.draw do
 
   resources :users
 
-  resources :posts
-
   resources :images
 
   resources :posts do

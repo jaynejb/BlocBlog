@@ -19,13 +19,13 @@
           <div class='btn-toolbar pull-right'>
           <div class='btn-group'>
             <button class='btn'><i class="icon-edit"></i> <%= link_to 'Edit', edit_post_path(post) %></button>
-            <button class='btn'><i class="icon-trash"></i> <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+            <button class='btn'><i class="icon-trash"></i> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
           </div>
           </div>  
           <% end %>
 
         <h2 class='post-title'><%= link_to post.title, post %></h2>
-        <p class='post-date'><em>Posted by</em> <%= post.author %> <em><%= time_ago_in_words(post.created_at) %> ago</em> in <%= post.category %> </p>
+        <p class='post-date'><em>Posted by</em> <%= post.user.name %> <em><%= time_ago_in_words(post.created_at) %> ago</em> in <%= post.category %> </p>
         <p class='post-text'><%= post.body %></p>
         </section>
         <% end %>
