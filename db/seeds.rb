@@ -9,7 +9,10 @@
 u1 = User.create(name: 'Jayne', password: 'Password123', password_confirmation: 'Password123', email: 'jayneyjang@example.com')
 u1.update_attribute(:admin, true)
 
-u2 = User.create(name: 'Leah', password: 'Password123', password_confirmation: 'Password123', email: 'leah@example.com' )
+u2 = User.create(name: 'Leah', password: 'Password123', password_confirmation: 'Password123', email: 'leah@example.com')
 u2.update_attribute(:admin, true)
 
-u3 = User.create(name: 'Dorian', password: 'Password123', password_confirmation: 'Password123', email: 'dorian@example.com' )
+u3 = User.create(name: 'Dorian', password: 'Password123', password_confirmation: 'Password123', email: 'dorian@example.com')
+
+p1 = Post.create(title: 'San Diego is Sunny', body: 'Have you ever visited this awesome place?', author: 'Jayne', category: 'Food')
+p1.update_attribute(:user_id, 1)
